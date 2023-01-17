@@ -7,7 +7,6 @@ import { File } from "../../models/File"
 export class HomeController extends Controller{
     constructor() {
         super()
-        this.except('Auth', 'responseFile')
     }
     index(request : Request, response : Response) {
         response.render('index')

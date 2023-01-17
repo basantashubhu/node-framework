@@ -32,3 +32,21 @@ export class Kernel extends BaseKernel{
     }
 
 }
+
+
+import {Router} from "express";
+export class Route {
+    private static router: Router;
+
+    static use(router : Router) {
+        this.router = router
+    }
+
+    static get(route : string, action : Array<string>) {
+        this.router.get('/', Kernel.map(action.join('@')))
+    }
+
+    static post(route : string, action : Array<string>) {
+        this.router.post('/', Kernel.map(action.join('@')))
+    }
+}

@@ -20,7 +20,6 @@ const File_1 = require("../../models/File");
 class HomeController extends Controller_1.Controller {
     constructor() {
         super();
-        this.except('Auth', 'responseFile');
     }
     index(request, response) {
         response.render('index');

@@ -16,4 +16,6 @@ app.use(cookieParser())
 const serviceContainer = new ServiceContainer(app)
 serviceContainer.run()
 
-app.listen(process.env.PORT || 9000)
+app.listen(process.env.PORT || 9000, () => {
+    console.log('Server started at: ', process.env.PORT || 9000)
+})

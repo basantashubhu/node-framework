@@ -1,8 +1,10 @@
 const router = require('express').Router()
-const {Kernel} = require('../app/Http/Controllers/Kernel/Kernel')
+const {Route} = require('../app/Http/Controllers/Kernel/Kernel')
+Route.use(router);
 
-router.get('/', Kernel.map('HomeController@index'))
 
-router.get('/file/:id', Kernel.map('HomeController@responseFile'))
+Route.get('/', ['HomeController', 'index']);
+
+Route.get('/file/:id', ['HomeController', 'responseFile'])
 
 module.exports = router

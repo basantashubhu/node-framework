@@ -17,4 +17,6 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use(cookie_parser_1.default());
 const serviceContainer = new ServiceContainer_js_1.ServiceContainer(app);
 serviceContainer.run();
-app.listen(process.env.PORT || 9000);
+app.listen(process.env.PORT || 9000, () => {
+    console.log('Server started at: ', process.env.PORT || 9000);
+});

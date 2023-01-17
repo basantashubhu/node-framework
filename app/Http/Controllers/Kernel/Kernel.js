@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Kernel = void 0;
+exports.Route = exports.Kernel = void 0;
 const ApiUserController_1 = require("../Api/ApiUserController");
 const ApiUserResourceController_1 = require("../Api/ApiUserResourceController");
 const LoginController_1 = require("../Auth/LoginController");
@@ -32,3 +32,15 @@ class Kernel extends BaseKernel_1.BaseKernel {
     }
 }
 exports.Kernel = Kernel;
+class Route {
+    static use(router) {
+        this.router = router;
+    }
+    static get(route, action) {
+        this.router.get('/', Kernel.map(action.join('@')));
+    }
+    static post(route, action) {
+        this.router.post('/', Kernel.map(action.join('@')));
+    }
+}
+exports.Route = Route;
