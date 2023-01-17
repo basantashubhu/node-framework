@@ -1,4 +1,7 @@
 # node-framework
+A small node framework that comes with MVC pattern.
+
+Author: Basanta Tajpuriya
 
 ## Installation
 Installation is very simple. Follow the instruction below.
